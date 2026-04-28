@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MEDACCER · Preview Landing v2</title>
+  <link rel="stylesheet" href="medaccer-preview.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="brand">MEDACCER <span>Preview v2</span></div>
+    <div class="selectors">
+      <label>
+        País
+        <select id="countrySelect"></select>
+      </label>
+      <label>
+        Especialidad
+        <select id="specialtySelect"></select>
+      </label>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="copy">
+        <p class="eyebrow" id="regulationText">Cumple Resolución 1888/2025 · Colombia</p>
+        <h1 id="headline"></h1>
+        <p id="subheadline"></p>
+        <div class="roi" id="roi"></div>
+        <div class="actions">
+          <button>Empezar ahora</button>
+          <button class="ghost">Ver demo</button>
+        </div>
+      </div>
+
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="phone-top">WhatsApp · <span id="demoTitle"></span></div>
+          <div class="chat" id="chat"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h3>Propuesta única</h3>
+        <p id="uniqueValue"></p>
+      </article>
+      <article class="card">
+        <h3>Caso de uso principal</h3>
+        <p id="useCase"></p>
+      </article>
+      <article class="card">
+        <h3>Funcionalidades destacadas</h3>
+        <ul id="features"></ul>
+      </article>
+      <article class="card">
+        <h3>Testimonio</h3>
+        <p id="testimonial"></p>
+      </article>
+    </section>
+
+    <section class="pricing">
+      <h2>Pricing (COP por ahora)</h2>
+      <div class="plans">
+        <div class="plan">
+          <h4>Starter</h4>
+          <p>$89K / mes</p>
+        </div>
+        <div class="plan recommended">
+          <h4>Asistente IA (Recomendado)</h4>
+          <p id="recommendedPrice">$169K / mes</p>
+        </div>
+        <div class="plan">
+          <h4>Escala clínica</h4>
+          <p>$289K / mes</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal hidden" id="comingSoonModal">
+    <div class="modal-card">
+      <h3 id="comingSoonTitle"></h3>
+      <p>Próximamente en este país. Deja tu email para ser el primero.</p>
+      <form class="lead-form">
+        <input type="email" placeholder="doctor@consultorio.com" required />
+        <button type="submit">Quiero acceso anticipado</button>
+      </form>
+      <button class="ghost close-modal" type="button">Cerrar</button>
+    </div>
+  </div>
+
+  <script src="medaccer-preview.js"></script>
+</body>
+</html>
