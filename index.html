@@ -3,94 +3,145 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MEDACCER · Preview Landing v2</title>
+  <title>MEDACCER · Landing v2 Specialty-first</title>
   <link rel="stylesheet" href="medaccer-preview.css" />
 </head>
 <body>
   <header class="header">
-    <div class="brand">MEDACCER <span>Preview v2</span></div>
-    <div class="selectors">
-      <label>
+    <a class="brand" href="#">MEDACCER</a>
+    <nav class="nav">
+      <a href="#producto">Producto</a>
+      <a href="#crm">CRM</a>
+      <a href="#blog">Blog</a>
+      <a href="#pricing">Precios</a>
+    </nav>
+    <div class="header-actions">
+      <label class="field">
         País
-        <select id="countrySelect"></select>
+        <select id="countrySelect" aria-label="Seleccionar país"></select>
       </label>
-      <label>
-        Especialidad
-        <select id="specialtySelect"></select>
-      </label>
+      <button class="btn">Empezar ahora</button>
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <div class="copy">
-        <p class="eyebrow" id="regulationText">Cumple Resolución 1888/2025 · Colombia</p>
-        <h1 id="headline"></h1>
-        <p id="subheadline"></p>
-        <div class="roi" id="roi"></div>
-        <div class="actions">
-          <button>Empezar ahora</button>
-          <button class="ghost">Ver demo</button>
+  <main>
+    <section class="hero" id="producto">
+      <div class="hero-copy">
+        <p class="badge" id="regulationText">🇨🇴 Colombia · Resolución 1888/2025</p>
+        <h1 id="headline">Su consultorio dental nunca duerme</h1>
+        <p class="subheadline" id="subheadline">Recupere presupuestos abandonados y reduzca inasistencias con seguimiento automático por WhatsApp.</p>
+        <div class="roi" id="roi">Los consultorios pierden $10.8M COP/mes en no-shows. MEDACCER reduce un 52% las inasistencias.</div>
+
+        <div class="specialty-picker" id="specialtyPills" aria-label="Selector de especialidades"></div>
+
+        <div class="hero-cta-row">
+          <button class="btn">Agendar demo</button>
+          <button class="btn ghost">Ver caso real</button>
         </div>
       </div>
 
-      <div class="phone-wrap">
-        <div class="phone">
-          <div class="phone-top">WhatsApp · <span id="demoTitle"></span></div>
-          <div class="chat" id="chat"></div>
+      <div class="phone-shell">
+        <div class="phone-header">
+          <div>
+            <strong id="demoTitle">Asistente · Odontología</strong>
+            <p>IA en línea · responde en &lt; 5s</p>
+          </div>
         </div>
+        <div class="phone-chat" id="chat"></div>
+        <div class="phone-input">Escribe un mensaje…</div>
       </div>
     </section>
 
-    <section class="grid">
+    <section class="section two-col" id="value-props">
       <article class="card">
         <h3>Propuesta única</h3>
-        <p id="uniqueValue"></p>
+        <p id="uniqueValue">MEDACCER contacta al paciente que no aceptó tratamiento y le ofrece facilidades de pago.</p>
       </article>
       <article class="card">
         <h3>Caso de uso principal</h3>
-        <p id="useCase"></p>
+        <p id="useCase">Paciente pregunta por diseño de sonrisa → bot comparte precio y agenda cita.</p>
       </article>
       <article class="card">
         <h3>Funcionalidades destacadas</h3>
         <ul id="features"></ul>
       </article>
-      <article class="card">
+      <article class="card highlight">
         <h3>Testimonio</h3>
-        <p id="testimonial"></p>
+        <p id="testimonial">Dra. María López · Odontóloga, Bogotá: “MEDACCER me devolvió 1 hora de mi día”.</p>
       </article>
     </section>
 
-    <section class="pricing">
-      <h2>Pricing (COP por ahora)</h2>
-      <div class="plans">
-        <div class="plan">
+    <section class="section" id="pricing">
+      <h2>Pricing diseñado para LATAM</h2>
+      <div class="pricing-grid">
+        <article class="price-card">
           <h4>Starter</h4>
-          <p>$89K / mes</p>
-        </div>
-        <div class="plan recommended">
-          <h4>Asistente IA (Recomendado)</h4>
-          <p id="recommendedPrice">$169K / mes</p>
-        </div>
-        <div class="plan">
+          <p class="price" id="starterPrice">$89K COP</p>
+        </article>
+        <article class="price-card recommended">
+          <span class="tag">Recomendado</span>
+          <h4>Asistente IA</h4>
+          <p class="price" id="recommendedPrice">$169K COP</p>
+        </article>
+        <article class="price-card">
           <h4>Escala clínica</h4>
-          <p>$289K / mes</p>
-        </div>
+          <p class="price" id="scalePrice">$289K COP</p>
+        </article>
       </div>
+    </section>
+
+    <section class="section" id="onboarding">
+      <h2>Flujo registro + onboarding (adaptativo por especialidad)</h2>
+      <div class="steps">
+        <div class="step">1. Signup + Ley 1581 + país</div>
+        <div class="step">2. Elegir especialidad</div>
+        <div class="step">3. Conectar WhatsApp</div>
+        <div class="step">4. Activar automatizaciones sugeridas</div>
+        <div class="step">5. Primer mensaje de prueba</div>
+      </div>
+      <div class="empty-state">
+        <h4>Estado vacío inicial</h4>
+        <p>Aún no hay pacientes con seguimiento. Active su primer check-in en 2 minutos.</p>
+      </div>
+    </section>
+
+    <section class="section" id="crm">
+      <h2>CRM personalizado por especialidad</h2>
+      <div class="crm-grid">
+        <article class="card"><h4>Dashboard</h4><p id="crmDashboard"></p></article>
+        <article class="card"><h4>Ficha paciente</h4><p id="crmPatientCard"></p></article>
+        <article class="card"><h4>Servicios predefinidos</h4><p id="crmServices"></p></article>
+        <article class="card"><h4>Automatización clave</h4><p id="crmAutomation"></p></article>
+      </div>
+      <p class="privacy-note hidden" id="privacyNote">🔒 MEDACCER nunca almacena contenido clínico de sesiones de psicología; solo datos administrativos.</p>
+    </section>
+
+    <section class="section" id="blog">
+      <h2>Blog y recursos por especialidad</h2>
+      <div class="blog-grid" id="blogGrid"></div>
     </section>
   </main>
 
+  <footer class="footer">
+    <p>MEDACCER · CRM + IA por WhatsApp para consultorios en LATAM</p>
+    <button class="btn">Solicitar acceso beta</button>
+  </footer>
+
   <div class="modal hidden" id="comingSoonModal">
     <div class="modal-card">
-      <h3 id="comingSoonTitle"></h3>
+      <h3 id="comingSoonTitle">Próximamente</h3>
       <p>Próximamente en este país. Deja tu email para ser el primero.</p>
-      <form class="lead-form">
-        <input type="email" placeholder="doctor@consultorio.com" required />
-        <button type="submit">Quiero acceso anticipado</button>
+      <form class="lead-form" id="leadForm">
+        <input type="email" required placeholder="doctor@consultorio.com" />
+        <button class="btn" type="submit">Avisarme</button>
       </form>
-      <button class="ghost close-modal" type="button">Cerrar</button>
+      <button class="btn ghost" id="closeModal" type="button">Cerrar</button>
     </div>
   </div>
+
+  <noscript>
+    <div class="noscript">Activa JavaScript para ver el cambio dinámico por especialidad y país.</div>
+  </noscript>
 
   <script src="medaccer-preview.js"></script>
 </body>
